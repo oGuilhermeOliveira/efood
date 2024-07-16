@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import fundo from '../../assets/images/fundo.png'
+import fundo from '../../assets/images/Vector.svg'
 
 export const HeaderLayout = styled.header`
   top: -24px;
