@@ -1,39 +1,28 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const FooterLayout = styled.header`
-  margin-top: 120px;
-  width: 100%;
+export const FooterSection = styled.div`
   height: 298px;
-  background-color: ${colors.beige};
-  overflow-y: hidden;
-  img {
-    margin-top: 40px;
-    width: 125px;
-    height: 56px;
-  }
-`
-export const Footerlinks = styled.ul`
+  background-color: ${colors.lightPeach};
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: center;
-  img {
-    margin-top: 40px;
-    width: 24px;
-    height: 24px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+
+  p {
+    font-size: 10px;
+    font-weight: 400;
   }
 `
-export const Footerlink = styled.li`
-  margin-right: 8px;
-  cursor: pointer;
-`
-export const FooterText = styled.p`
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 12px;
-  margin-top: 80px;
-`
-export const FooterContainer = styled.div`
-  text-align: center;
+
+export const ListaLinksMedia = styled.ul`
+  display: flex;
+  padding-bottom: 80px;
+  padding-top: 32px;
+
+  a {
+    margin-right: 8px;
+  }
 `

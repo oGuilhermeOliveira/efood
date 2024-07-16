@@ -1,25 +1,27 @@
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+
+import styled from 'styled-components'
 import { colors } from '../../styles'
-import { Props } from '.'
+import { Props } from './index'
 
 export const ButtonContainer = styled.button<Props>`
-  border: none;
-  color: ${(props) =>
-    props.variant === 'primary' ? colors.beige : colors.red};
-  background-color: ${(props) =>
-    props.variant === 'primary' ? colors.red : colors.beige};
+  background-color: ${colors.peach};
+  color: ${colors.orange};
   font-size: 14px;
   font-weight: 700;
-  padding: 4px 6px;
+  border: none;
+  text-align: center;
+  width: ${(props) => (props.size === 'big' ? '100%' : '304px')};
+  padding: ${(props) => (props.size === 'big' ? '4px 0' : '4px 6px')};
   cursor: pointer;
 `
+
 export const ButtonLink = styled(Link)`
-  border: none;
-  color: ${colors.beige};
-  background-color: ${colors.red};
+  background-color: ${colors.orange};
+  color: ${colors.peach};
   font-size: 14px;
   font-weight: 700;
-  padding: 4px 6px;
+  border: none;
+  text-decoration: none;
   cursor: pointer;
 `

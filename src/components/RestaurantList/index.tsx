@@ -1,34 +1,46 @@
-import FoodTypes from '../../models/FoodTypes'
-import Restaurant from '../Restaurant'
-import { Title } from '../Restaurant/styles'
-import { List, ListContainer } from './styles'
+import Loader from '../Loader'
+import RestauranteCard from '../RestaurantCard'
+import { Lista } from './styles'
 
-export type Props = {
-  title: string
-  types: FoodTypes[]
+type Props = {
+  restaurantes: Restaurante[]
+  isLoading: boolean
 }
-const RestaurantsList = ({ title, types }: Props) => (
-  <>
-    <div className="container">
-      <ListContainer>
-        <Title>{title}</Title>
-        <List>
-          {types.map((type) => (
-            <Restaurant
-              key={type.id}
-              title={type.title}
-              category={type.category}
-              score={type.score}
-              description={type.description}
-              infos={type.infos}
-              image={type.image}
-              star={type.star}
-            />
-          ))}
-        </List>
-      </ListContainer>
-    </div>
-  </>
-)
 
-export default RestaurantsList
+const RestaurantList = ({ restaurantes, isLoading }: Props) => {
+  const getTagRestaurante = (restaurante: Restaurante) => {
+    const tags = []
+    if (restaurante.destacado) {
+      tags.push('Destaque da semana')
+    }
+    if (restaurante.tipo) {
+      tags.push(restaurante.tipo)
+    }
+    return tags
+  }
+  if (isLoading) {
+    return <Loader />
+  }
+
+  return (
+    <div className="container">
+      <Lista>
+        {restaurantes.map((restaurante) => (
+          <li key={restaurante.id}>
+            <RestauranteCard
+              id={restaurante.id}
+              titulo={restaurante.titulo}
+              descricao={restaurante.descricao}
+              avaliacao={restaurante.avaliacao}
+              capa={restaurante.capa}
+              tipo={restaurante.tipo}
+              infos={getTagRestaurante(restaurante)}
+            />
+          </li>
+        ))}
+      </Lista>
+    </div>
+  )
+}
+
+export default RestaurantList
