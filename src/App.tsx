@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { GlobalCss } from './styles'
 import Footer from './components/Footer'
-import Rotas from './routesss'
+import Rotas from './routs'
 import { store } from './store'
 
 function App() {
