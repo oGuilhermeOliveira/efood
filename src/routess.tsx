@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
-import HomePag from '../src/pages/home'
-import Product from '../src/pages/Menu'
+import HomePag from './pages/home'
+import Product from './pages/Menu'
 
 const Rotas = () => (
   <Routes>
