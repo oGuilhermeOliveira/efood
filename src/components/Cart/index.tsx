@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useFormik } from 'formik'
@@ -59,7 +60,19 @@ const Cart = () => {
         .min(4, 'Ano inválido')
         .required('Campo Obrigatório.')
     }),
-    onSubmit: (values) => {
+    onSubmit: (values: {
+      fullName: any
+      deliveryAdress: any
+      deliveryCity: any
+      zipCode: any
+      numberAdress: any
+      complementAdress: any
+      cardDisplayName: any
+      cardNumber: any
+      cardCode: any
+      expiresMonth: any
+      expiresYear: any
+    }) => {
       purchase({
         products: items.map((item) => ({
           id: item.id,
