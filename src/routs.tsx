@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import Home from './pages/home'
 import Product from './pages/Menu'
 
 const Rotas = () => (
