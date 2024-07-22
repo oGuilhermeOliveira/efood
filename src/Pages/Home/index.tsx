@@ -4,7 +4,7 @@ import RestaurantList from '../../components/RestaurantList'
 
 import { useGetRestauranteQuery } from '../../services/api'
 
-const Home = () => {
+const HomePag = () => {
   const { data: restaurante, isLoading } = useGetRestauranteQuery()
   if (restaurante) {
     return (
@@ -17,4 +17,4 @@ const Home = () => {
   return <Loader />
 }
 
-export default Home
+export default HomePag

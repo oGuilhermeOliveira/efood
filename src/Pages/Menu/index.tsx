@@ -12,7 +12,7 @@ type MenuParams = {
   id: string
 }
 
-const Menu = () => {
+const MenuPag = () => {
   const { id } = useParams() as MenuParams
   const { data: menu } = useGetMenuQuery(id)
 
@@ -30,4 +30,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default MenuPag
